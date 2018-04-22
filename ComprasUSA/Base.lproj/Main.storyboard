@@ -232,7 +232,12 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btAddProduct" destination="J4U-IG-W5S" id="R78-0n-u0h"/>
+                        <outlet property="ivImage" destination="6Ud-FE-H93" id="bQ2-lX-sdl"/>
+                        <outlet property="swCard" destination="Rga-aJ-aRz" id="Ovv-Je-ayU"/>
                         <outlet property="tfProductName" destination="O7b-XG-H40" id="zg3-Th-GiK"/>
+                        <outlet property="tfPruductState" destination="wMP-y4-zlN" id="dLQ-Ov-1Vu"/>
+                        <outlet property="tfValue" destination="qtq-PF-SDI" id="eaV-nK-YAo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXm-ly-rbB" userLabel="First Responder" sceneMemberID="firstResponder"/>

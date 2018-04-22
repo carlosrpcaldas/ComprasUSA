@@ -68,7 +68,7 @@ class SettingViewController: UIViewController {
     
     func showAlert(type: Type, estado: State?) {
         let title = (type == .add) ? "Adicionar" : "Editar"
-        let alert = UIAlertController(title: "\(title) Adicionar Estado", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(title) estado", message: nil, preferredStyle: .alert)
         
         alert.addTextField { (textStateField: UITextField) in
             textStateField.placeholder = "Nome do estado"
@@ -160,7 +160,7 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StateTableViewCell
         let estado = data[indexPath.row]
         cell.lbState?.text = estado.name
         cell.lbTax?.text = String( estado.taxes )

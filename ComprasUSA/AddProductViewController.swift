@@ -5,14 +5,27 @@
 //  Created by admin on 4/19/18.
 //  Copyright © 2018 Carlos P Caldas. All rights reserved.
 //
-
+import CoreData
 import UIKit
 
 class AddProductViewController: UIViewController {
     
     
     @IBOutlet weak var tfProductName: UITextField!
+    @IBOutlet weak var ivImage: UIImageView!
+    @IBOutlet weak var tfPruductState: UITextField!
+    @IBOutlet weak var tfValue: UITextField!
+    @IBOutlet weak var swCard: UISwitch!
+    @IBOutlet weak var btAddProduct: UIButton!
     
+    // MARK: - Properties
+    var data: [State] = []
+    var product: Product!
+    var pickerView: UIPickerView!
+    var smallImage: UIImage!
+    
+    
+   // MARK: - viewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +49,38 @@ class AddProductViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+extension AddProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String: AnyObject]?) {
+        
+        let smallSize = CGSize(width: 300, height: 280)
+        UIGraphicsBeginImageContext(smallSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
+        smallImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        ivImage.image = smallImage
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddProductViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row].name
+    }
+}
+
+extension AddProductViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return data.count
+    }
+}
+
+
+
