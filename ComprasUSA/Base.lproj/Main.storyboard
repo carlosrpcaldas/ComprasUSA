@@ -184,6 +184,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cigarrinho" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-FE-H93">
                                 <rect key="frame" x="16" y="141" width="343" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado da compra" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-y4-zlN">
                                 <rect key="frame" x="16" y="318" width="284" height="30"/>
@@ -228,6 +231,13 @@
                                     <action selector="btAddProduct:" destination="Arh-Ce-oTA" eventType="touchUpInside" id="LIo-10-BfW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifn-Tm-9K8">
+                                <rect key="frame" x="16" y="141" width="343" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="addPoster:" destination="Arh-Ce-oTA" eventType="touchUpInside" id="RUJ-79-qy5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Lj2-nI-TL1"/>
@@ -236,7 +246,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btAddProduct" destination="J4U-IG-W5S" id="R78-0n-u0h"/>
-                        <outlet property="ivImage" destination="6Ud-FE-H93" id="bQ2-lX-sdl"/>
+                        <outlet property="ivImage" destination="6Ud-FE-H93" id="yp7-xb-CIG"/>
                         <outlet property="swCard" destination="Rga-aJ-aRz" id="Ovv-Je-ayU"/>
                         <outlet property="tfProductName" destination="O7b-XG-H40" id="zg3-Th-GiK"/>
                         <outlet property="tfPruductState" destination="wMP-y4-zlN" id="dLQ-Ov-1Vu"/>

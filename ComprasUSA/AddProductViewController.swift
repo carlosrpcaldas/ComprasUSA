@@ -17,7 +17,7 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var tfValue: UITextField!
     @IBOutlet weak var swCard: UISwitch!
     @IBOutlet weak var btAddProduct: UIButton!
-    
+
     // MARK: - Properties
     var data: [State] = []
     var product: Product!
@@ -46,8 +46,8 @@ class AddProductViewController: UIViewController {
             tfValue.text = String(product.value)
             swCard.setOn(product.card, animated: false)
             btAddProduct.setTitle("Atualizar", for: .normal)
-            if let imagePoster = product.title as? UIImage {
-                ivImage.image = imagePoster
+            if let image = product.title as? UIImage {
+                ivImage.image = image
             }
             btAddProduct.isEnabled = true
             btAddProduct.backgroundColor = .green
@@ -184,22 +184,65 @@ class AddProductViewController: UIViewController {
         }
     }
     
+    
+    
+    // Exemplo Eric
+    
+    @IBAction func addPoster(_ sender: UIButton) {
+   /*
+        //Criando o alerta que será apresentado ao usuário
+        let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster?", preferredStyle: .actionSheet)
+        
+        //Verificamos se o device possui câmera. Se sim, adicionamos a devida UIAlertAction
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Câmera", style: .default, handler: { (action: UIAlertAction) in
+                self.selectPicture(sourceType: .camera)
+            })
+            alert.addAction(cameraAction)
+        }
+        
+        //As UIAlertActions de Biblioteca de fotos e Álbum de fotos também são criadas e adicionadas
+        let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { (action: UIAlertAction) in
+            self.selectPicture(sourceType: .photoLibrary)
+        }
+        alert.addAction(libraryAction)
+        
+        let photosAction = UIAlertAction(title: "Álbum de fotos", style: .default) { (action: UIAlertAction) in
+            self.selectPicture(sourceType: .savedPhotosAlbum)
+        }
+        alert.addAction(photosAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+ */
+        changePoster()
+    }
+    
+    
 }
 
 // MARK: - extensions
 extension AddProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String: AnyObject]?) {
         
+        //Iremos usar o código abaixo para criar uma versão reduzida da imagem escolhida pelo usuário
         let smallSize = CGSize(width: 300, height: 280)
         UIGraphicsBeginImageContext(smallSize)
         image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
+        
+        //Atribuímos a versão reduzida da imagem à variável smallImage
         smallImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+ 
+        ivImage.image = smallImage //Atribuindo a imagem à ivPoster
         
-        ivImage.image = smallImage
+        //Aqui efetuamos o dismiss na UIImagePickerController, para retornar à tela anterior
         dismiss(animated: true, completion: nil)
     }
 }
+
 
 extension AddProductViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
