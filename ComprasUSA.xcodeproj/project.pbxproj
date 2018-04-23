@@ -13,7 +13,7 @@
 		84A09166208BDD27005717B5 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09165208BDD27005717B5 /* UIViewController+CoreData.swift */; };
 		84A09168208BE2AE005717B5 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09167208BE2AE005717B5 /* ProdutoTableViewCell.swift */; };
 		84D226842088FEDD00EED3DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D226832088FEDD00EED3DF /* SettingViewController.swift */; };
-		84D226862088FF2500EED3DF /* TaxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D226852088FF2500EED3DF /* TaxesViewController.swift */; };
+		84D226862088FF2500EED3DF /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D226852088FF2500EED3DF /* TotalViewController.swift */; };
 		84D22688208910DE00EED3DF /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D22687208910DE00EED3DF /* AddProductViewController.swift */; };
 		84D9D3A12086DCA80006DE4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9D3A02086DCA80006DE4B /* AppDelegate.swift */; };
 		84D9D3A32086DCA80006DE4B /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9D3A22086DCA80006DE4B /* ShoppingTableViewController.swift */; };
@@ -29,7 +29,7 @@
 		84A09165208BDD27005717B5 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		84A09167208BE2AE005717B5 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
 		84D226832088FEDD00EED3DF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		84D226852088FF2500EED3DF /* TaxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesViewController.swift; sourceTree = "<group>"; };
+		84D226852088FF2500EED3DF /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 		84D22687208910DE00EED3DF /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		84D9D39D2086DCA80006DE4B /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D9D3A02086DCA80006DE4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8468C244208D6CB700E4E465 /* TotalShopping */ = {
+			isa = PBXGroup;
+			children = (
+				84D226852088FF2500EED3DF /* TotalViewController.swift */,
+			);
+			path = TotalShopping;
+			sourceTree = "<group>";
+		};
 		84A09157208BC995005717B5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +70,6 @@
 		84A09159208BC9E5005717B5 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
-				84D226852088FF2500EED3DF /* TaxesViewController.swift */,
 				84D9D3A22086DCA80006DE4B /* ShoppingTableViewController.swift */,
 				84A09167208BE2AE005717B5 /* ProdutoTableViewCell.swift */,
 			);
@@ -101,6 +108,7 @@
 				84A0915A208BCA08005717B5 /* Settings */,
 				84A09157208BC995005717B5 /* Extensions */,
 				84A09159208BC9E5005717B5 /* Shopping */,
+				8468C244208D6CB700E4E465 /* TotalShopping */,
 				84D9D3A42086DCA80006DE4B /* Main.storyboard */,
 				84D22687208910DE00EED3DF /* AddProductViewController.swift */,
 				84D9D3A72086DCA90006DE4B /* Assets.xcassets */,
@@ -184,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D226862088FF2500EED3DF /* TaxesViewController.swift in Sources */,
+				84D226862088FF2500EED3DF /* TotalViewController.swift in Sources */,
 				84A09156208BC5A5005717B5 /* ComprasUSA.xcdatamodeld in Sources */,
 				84D9D3A32086DCA80006DE4B /* ShoppingTableViewController.swift in Sources */,
 				84D22688208910DE00EED3DF /* AddProductViewController.swift in Sources */,
